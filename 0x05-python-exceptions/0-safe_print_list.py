@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-try:
-    def safe_print_list(my_list=[], x=0):
+def safe_print_list(my_list=[], x=0):
+    try:
         new_list = ""
         count = 0
 
@@ -16,5 +16,5 @@ try:
         print(new_list)
 
         return my_list[count - 1]
-except:
-    print("Could not convet string to integer")
+    except IndexError:
+        print("Index Error found")
