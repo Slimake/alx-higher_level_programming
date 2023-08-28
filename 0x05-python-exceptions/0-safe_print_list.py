@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def safe_print_list(my_list=[], x=0):
     new_list = ""
     count = 0
@@ -12,7 +11,7 @@ def safe_print_list(my_list=[], x=0):
 
     for i in range(1, count + 1):
         new_list = new_list + str(i)
-        
+
     print(new_list)
 
     return my_list[count - 1]
