@@ -16,5 +16,5 @@ try:
         print(new_list)
 
         return my_list[count - 1]
-except ValueError:
+except:
     print("Could not convet string to integer")
