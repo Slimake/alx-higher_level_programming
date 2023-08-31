@@ -1,10 +1,8 @@
 #!/usr/bin/python3
 class Square:
     """A square class that defines a class.
-    
     Defines an __init__ method.
     """
-
     def __init__(self) -> None:
         """This is called during the creation of an object"""
         pass
