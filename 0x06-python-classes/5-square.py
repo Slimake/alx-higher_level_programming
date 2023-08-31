@@ -59,10 +59,13 @@ class Square:
         return (self.__size * self.__size)
 
     def my_print(self):
-        size = self.__size
-        if size == 0:
+        """
+        Prints the square with the character "#" self.__size times
+        """
+        if self.__size == 0:
             print("")
-        for i in range(0, size):
-            for j in range(0, size):
-                print("#", end="")
-            print("")
+        for i in range(self.__size):
+            print("#" * self.__size)
+
+        # Another way to print the '#' character
+        # print("\n".join(['#' * self.__size for row in range(self.__size)]))
