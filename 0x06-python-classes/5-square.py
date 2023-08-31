@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-4-square module
-Declares class sqaure with private attribute size
-using getter and setter, also raises an exception
+5-square module
+Declares class sqaure with private attribute size using getter and setter,
+ also raises an exception, print '#' self.__size number of times
 """
 
 
