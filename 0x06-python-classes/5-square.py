@@ -59,12 +59,10 @@ class Square:
         return (self.__size * self.__size)
 
     def my_print(self):
-        """
-        Prints square with the '#' character to stdout
-        """
-        if self.__size == 0:
+        size = self.__size
+        if size == 0:
             print("")
-        for i in range(0, self.__size):
-            for j in range(0, self.__size):
+        for i in range(0, size):
+            for j in range(0, size):
                 print("#", end="")
             print("")
