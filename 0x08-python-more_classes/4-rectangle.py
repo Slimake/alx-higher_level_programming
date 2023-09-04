@@ -55,7 +55,7 @@ class Rectangle:
 
     def perimeter(self):
         """returns 2 * (width + height) if width and height is not 0"""
-        if self.width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             return 0
         else:
             return 2 * (self.__width * self.__height)
@@ -63,7 +63,7 @@ class Rectangle:
     def __str__(self):
         """returns the rectangle with the character '#' \
         if width or height is not 0"""
-        if self.width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             return str()
         else:
             return "\n".join(["#" * self.__width
