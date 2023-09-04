@@ -2,9 +2,10 @@
 """
 0-rectangle Module
 
-Defines class Rectangle
+Defines class Rectangle that does nothing
 """
 
 
 class Rectangle:
+    """An empty class"""
     pass
