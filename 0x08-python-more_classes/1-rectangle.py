@@ -1,18 +1,18 @@
 #!/usr/bin/python3
 """
-1-rectangle module
+1-rectangle module.
 
-Defines a Rectangle class
+Defines a Rectangle class.
 """
 
 
 class Rectangle:
     """
-    Defines class rectangle with private attribute width and height
+    Defines class rectangle with private attribute width and height.
 
     Args:
-        width (int): width of the rectangle
-        height (int): height of the rectangle
+        width (int): width of the rectangle.
+        height (int): height of the rectangle.
     """
     def __init__(self, width=0, height=0):
         """Initialise a rectangle"""
@@ -28,9 +28,9 @@ class Rectangle:
     def width(self, value):
         """Setter sets width"""
         if type(value) is not int:
-            raise ValueError("widht must be >= 0")
-        elif value < 0:
             raise TypeError("width must be an integer")
+        elif value < 0:
+            raise ValueError("width must be >= 0")
         else:
             self.__width = value
 
@@ -43,8 +43,8 @@ class Rectangle:
     def height(self, value):
         """Setter sets width"""
         if type(value) is not int:
-            raise ValueError("height must be >= 0")
-        elif value < 0:
             raise TypeError("height must be an integer")
+        elif value < 0:
+            raise ValueError("height must be >= 0")
         else:
             self.__height = value
