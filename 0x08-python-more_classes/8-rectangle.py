@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-7-rectangle module
+8-rectangle module
 
 Define Rectangle class
 """
