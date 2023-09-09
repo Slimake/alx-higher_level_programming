@@ -1,0 +1,55 @@
+===============================
+ ``2-matrix_divided`` module
+===============================
+
+Using ``matrix_divided`` 
+-------------------------------
+
+divides all elements of a matrix, only if matrix contains list of 
+integers or floats, each row of the matrix must be of the same size,
+div must be a number and div can't be equal to 0, Otherwise raise
+an Exception
+
+Numbers
+=======
+
+``matrix_divided`` divides all elements of a matrix. First we 
+import ``matrix_divided`` from ``2-matrix_divided`` module
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Now use it:
+    >>> matrix_divided([[1, 2, 3]], 3) # doctest: +IGNORE_EXCEPTION_DETAIL
+    [[0.33, 0.67, 1.0]]
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3) # doctest: +IGNORE_EXCEPTION_DETAIL
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+    >>> matrix_divided([[1, 2, 3], [-4, -5, -6]], 3) # doctest: +IGNORE_EXCEPTION_DETAIL
+    [[0.33, 0.67, 1.0], [-1.33, -1.67, -2.0]]
+    >>> matrix_divided(3, 3) # doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+    TypeError: 'int' object is not iterable
+    >>> matrix_divided("myname", 3) # doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+    >>> matrix_divided([[1, 2, "3"], [4, 5, 6]], 3) # doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], "3") # doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+    TypeError: div must be a number
+    >>> matrix_divided([[1, 2, 3, 4], [4, 5, 6]], 3) # doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0) # doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+    >>> matrix_divided((1, 2, 3), 3) # doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+    TypeError: object of type 'int' has no len()
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]])
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+    >>> matrix_divided()
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
