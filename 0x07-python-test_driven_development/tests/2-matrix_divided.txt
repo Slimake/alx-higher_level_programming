@@ -19,12 +19,28 @@ import ``matrix_divided`` from ``2-matrix_divided`` module
     >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
 Now use it:
-    >>> matrix_divided([[1, 2, 3]], 3) # doctest: +IGNORE_EXCEPTION_DETAIL
+    >>> matrix_divided([[1, 2, 3]], 3)
     [[0.33, 0.67, 1.0]]
-    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3) # doctest: +IGNORE_EXCEPTION_DETAIL
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
     [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
-    >>> matrix_divided([[1, 2, 3], [-4, -5, -6]], 3) # doctest: +IGNORE_EXCEPTION_DETAIL
+    >>> matrix_divided([[1, 2, 3], [-4, -5, -6]], 3)
     [[0.33, 0.67, 1.0], [-1.33, -1.67, -2.0]]
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], float("inf"))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], float("-inf"))
+    [[-0.0, -0.0, -0.0], [-0.0, -0.0, -0.0]]
+    >>> matrix_divided([[1, 2, float("inf")], [4, 5, 6]], float("-inf"))
+    [[-0.0, -0.0, nan], [-0.0, -0.0, -0.0]]
+    >>> matrix_divided([[1, 2, float("inf")], [4, 5, 6]], 3)
+    [[0.33, 0.67, inf], [1.33, 1.67, 2.0]]
+    >>> matrix_divided([[1, 2, float("nan")], [4, 5, 6]], 3)
+    [[0.33, 0.67, nan], [1.33, 1.67, 2.0]]
+    >>> matrix_divided([[1, 2, float("nan")], [4, 5, 6]], float("nan"))
+    [[nan, nan, nan], [nan, nan, nan]]
+    >>> matrix_divided([[1, 2, float("inf")], [4, 5, 6]], float("nan"))
+    [[nan, nan, nan], [nan, nan, nan]]
+    >>> matrix_divided([[1, 2, float("-inf")], [4, 5, 6]], float("nan"))
+    [[nan, nan, nan], [nan, nan, nan]]
     >>> matrix_divided(3, 3) # doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
     TypeError: 'int' object is not iterable
@@ -46,10 +62,12 @@ Now use it:
     >>> matrix_divided((1, 2, 3), 3) # doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
     TypeError: object of type 'int' has no len()
-    >>> matrix_divided([[1, 2, 3], [4, 5, 6]])
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]]) # doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
     TypeError: matrix_divided() missing 1 required positional argument: 'div'
-    >>> matrix_divided()
+    >>> matrix_divided() # doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
     TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
-
+    >>> matrix_divided([[1, 2, (3, 4, 5)], [4, 5, 6]], 3) # doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
