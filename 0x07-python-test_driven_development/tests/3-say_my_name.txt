@@ -13,7 +13,7 @@ Numbers
 =======
 
 ``say_my_name`` print the firstname and lastname. First we 
-import ``matrix_divided`` from ``3-say_my_name`` module
+import ``say_my_name`` from ``3-say_my_name`` module
 
     >>> say_my_name = __import__('3-say_my_name').say_my_name
 
