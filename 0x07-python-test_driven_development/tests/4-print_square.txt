@@ -1,0 +1,32 @@
+===============================
+ ``4-print_square`` module
+===============================
+
+Using ``print_square`` 
+-------------------------------
+
+prints a square with the character '#' if size > 0 and
+size is an integer, otherwise raise appropriate Exception
+
+Numbers
+=======
+
+``print_square`` prints a square with the character '#'. First we 
+import ``print_square`` from ``4-print_square`` module
+
+    >>> print_square = __import__('4-print_square').print_square
+
+Now use it:
+    >>> print_square(2)
+    ##
+    ##
+    >>> print_square(-3) # doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+    >>> print_square("2") # doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+    >>> print_square() # doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
