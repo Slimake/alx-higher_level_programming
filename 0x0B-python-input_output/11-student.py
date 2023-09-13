@@ -48,4 +48,5 @@ class Student:
         Args:
             json: a dictionary
         """
-        self.__dict__ = json
+        if json != {}:
+            self.__dict__ = json
