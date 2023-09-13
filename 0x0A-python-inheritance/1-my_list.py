@@ -15,4 +15,5 @@ class MyList(list):
         super().__init__(self)
 
     def print_sorted(self):
+        """Prints the list, but sorted(ascending order)"""
         print(sorted(self))
