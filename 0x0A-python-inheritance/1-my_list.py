@@ -16,5 +16,4 @@ class MyList(list):
 
     def print_sorted(self):
         """Prints the list, but sorted(ascending order)"""
-        if self != []:
-            print(sorted(self))
+        print(sorted(self))
