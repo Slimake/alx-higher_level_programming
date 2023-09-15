@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 """
-100-add_attribute module
+101-add_attribute module
 
 Contains a function that adds new attribute to an object if possible
 """
 
 
-def add_attribute(obj, attribute, value):
+def add_attribute(obj, key, value):
     """Adds a new attribute to an object"""
     if '__dict__' in dir(obj):
-        setattr(obj, attribute, value)
+        obj.__setattr__(key, value)
     else:
-        raise TypeError("Can't add new attribute")
+        raise TypeError("can't add new attribute")
+        
