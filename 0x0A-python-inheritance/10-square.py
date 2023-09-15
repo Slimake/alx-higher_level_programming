@@ -5,10 +5,12 @@
 Contains Square class that inherits from Rectangle class which inherit
 from BaseGeometry class
 """
-Rectangle = __import__('9-rectangle').Rectangle
 
 
-class Square(Rectangle):
+Rectangle = __import__('9-rectangle')
+
+
+class Square(Rectangle.Rectangle):
     """Defines Square class that inherit from Rectangle class
     which inherit from BaseGeometry
     """
