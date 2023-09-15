@@ -2,8 +2,8 @@
 """
 11-square module
 
-Contains Square class that inherits from Rectangle class which inherit
-from BaseGeometry class
+Contains Square class that subclass to Rectangle class that is also
+a subclass to BaseGeometry class
 """
 
 
