@@ -2,15 +2,13 @@
 """
 10-square module
 
-Contains Square class that inherits from Rectangle class which inherit
-from BaseGeometry class
+Contains Square class that is a subclass to Rectangle class which
+is also a subclass to BaseGeometry class
 """
+Rectangle = __import__('9-rectangle').Rectangle
 
 
-Rectangle = __import__('9-rectangle')
-
-
-class Square(Rectangle.Rectangle):
+class Square(Rectangle):
     """Defines Square class that inherit from Rectangle class
     which inherit from BaseGeometry
     """
