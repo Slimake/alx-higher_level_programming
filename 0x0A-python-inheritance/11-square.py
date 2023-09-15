@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """
 11-square module
+
+Contains Square class that inherits from Rectangle class which inherit
+from BaseGeometry class
 """
 
 
