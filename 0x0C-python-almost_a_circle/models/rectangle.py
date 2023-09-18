@@ -1,22 +1,37 @@
 #!/usr/bin/python3
 """
-rectangle module
+rectangle module.
 
-Contains Rectangle class
+Contains Rectangle class.
 """
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Define Rectangle class that inherit from Base class"""
+    """Define Rectangle class that inherit from Base class.
+
+    Methods:
+        __init__(self, width, height, x=0, y=0, id=None):
+        width(self)     width(self, value)
+        height(self)    height(self, vaue)
+        x(self)         x(self, value)
+        y(self)         y(self, value)
+        __str__(self)
+        area(self)
+        display(self)
+        update(self, *args, **kwargs)
+        to_dictionary(self)
+
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initializes the class instance
+        """Initializes the class instance.
 
         Args:
             width (int): the width of the rectangle
             height (int): the height of the rectangle
             x (int): x coordinate
             y (int): y coordinate
+
         """
         if type(width) is not int:
             raise TypeError("width must be an integer")
