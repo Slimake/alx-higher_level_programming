@@ -8,7 +8,17 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Defines Square class that inherits from Rectangle"""
+    """Defines Square class that inherits from Rectangle
+
+    Methods:
+        __init__(self, x=0, y=0, id=None):
+        size(self)
+        size(self, value)
+        __str__(self)
+        update(self, *args, **kwargs)
+        to_dictionary(self)
+
+    """
 
     def __init__(self, size, x=0, y=0, id=None):
         """Initializes the class instance
