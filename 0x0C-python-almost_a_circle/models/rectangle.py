@@ -8,9 +8,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """Define Rectangle class that inherit from Base class
-
-    """
+    """Define Rectangle class that inherit from Base class"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initializes the class instance
 
