@@ -37,5 +37,7 @@ class Base:
         Args:
             list_dictionaries (dict): a list of dictionaries
         """
-        json_dictionary = json.dumps(list_dictionaries)
-        return json_dictionary
+        if list_dictionaries is None:
+            list_dictionaries = []
+        return json.dumps(list_dictionaries)
+
