@@ -147,7 +147,6 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-                
 
     def __str__(self):
         """print [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
