@@ -59,3 +59,12 @@ class Base:
         filename = cls.__name__ + ".json"
         with open(filename, "w", encoding="utf-8") as file:
             file.write(cls.to_json_string(obj))
+
+    @classmethod
+    def create(cls, **dictionary):
+        if cls.__name__ == "Rectangle":
+            dummy = cls(5, 5)
+        elif cls.__name__ == "Square":
+            dummy = cls(5)
+        dummy.update(**dictionary)
+        return dummy
