@@ -70,15 +70,27 @@ class Base:
         return dummy
 
     @classmethod
-    def load_from_file(cls):
+    def save_to_file_csv(cls, list_objs):
+        instance = []
+        if list_objs is not None:
+            for obj in list_objs:
+                instance.append(cls.to_dictionary(obj))
+                print(cls.to_dictionary(obj))
+
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", encoding="utf-8") as file:
+            file.write(cls.to_json_string(instance))
+
+    @classmethod
+    def load_from_file_csv(cls):
         lis = []
-        filename = cls.__name__ + ".json"
+        filename = cls.__name__ + ".csv"
         try:
             with open(filename, encoding="utf-8") as file:
                 json_string = file.read()
 
-                new_list = cls.from_json_string(json_string)
-                for obj in new_list:
+                python_list = cls.from_json_string(json_string)
+                for obj in python_list:
                     lis.append(cls.create(**obj))
         except FileNotFoundError:
             pass
