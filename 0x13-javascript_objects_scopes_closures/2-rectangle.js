@@ -2,12 +2,9 @@
 
 module.exports = class Rectangle {
   constructor (w, h) {
-    this.width = w;
-    this.height = h;
-
-    if ((w < 1 || w === undefined) || (h < 1 || h === undefined)) {
-      delete this.width;
-      delete this.height;
+    if (w > 0 && h > 0) {
+      this.width = w;
+      this.height = h;
     }
   }
 };
