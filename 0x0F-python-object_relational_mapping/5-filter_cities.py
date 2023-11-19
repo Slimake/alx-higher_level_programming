@@ -24,5 +24,6 @@ if __name__ == '__main__':
         if (count < lenOf):
             count += 1
             print(", ", end="")
+    print()
     cur.close()
     db.close()
