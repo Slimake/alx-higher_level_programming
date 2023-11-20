@@ -22,11 +22,11 @@ if __name__ == "__main__":
     session = Session()
 
     # Query database for states that contains letter 'a' and delete
-    query = session.query(State, City).join(
-        City, City.state_id == State.id, isouter=True).order_by(
+    query = session.query(State.name, City.id, City.name).filter(
+        State.id == City.state_id).order_by(
         City.id)
 
     for row in query.all():
-        print("{:s}: ({:d}) {:s}".format(row[0].name, row[1].id, row[1].name))
+        print("{:s}: ({:d}) {:s}".format(row[0], row[1], row[2]))
 
     session.close()
