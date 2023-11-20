@@ -14,18 +14,17 @@ if __name__ == "__main__":
                            .format(sys.argv[1], sys.argv[2],
                                    sys.argv[3]), pool_pre_ping=True)
 
+    Base.metadata.create_all(engine)
+
     # Create session
     Session = sessionmaker(bind=engine)
     session = Session()
 
     # Add state and save to database
-    session.add(State(name="Louisiana"))
+    state = State(name="Louisiana")
+    session.add(state)
     session.commit()
 
-    # Query database for states that contains letter 'a'
-    query = session.query(State).order_by(State.id)
-    for row in query.all():
-        pass
-    print("{:d}".format(row.id))
+    print("{:d}".format(state.id))
 
     session.close()
