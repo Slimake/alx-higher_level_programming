@@ -1,5 +1,5 @@
-#!//bin/bash
+#!/bin/bash
 # A bash script that takes in a URL, sends a request to that URL
 # and displays the size of the body of the response
 
-curl -s https://"$1"
+curl -Is "$1" | grep -i Content-Length | cut -d' ' -f2
