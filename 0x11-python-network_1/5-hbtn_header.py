@@ -14,4 +14,4 @@ if __name__ == '__main__':
     url = argv[1]
     # Fetch data from URL
     r = requests.get(url)
-    print(r.headers['X-Request-Id'])
+    print(r.headers.get('X-Request-Id'))
