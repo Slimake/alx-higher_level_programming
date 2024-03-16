@@ -2,7 +2,8 @@
 
 
 def print_list_integer(my_list=[]):
-    if len(my_list):
-        for num in my_list:
-            print("{:d}".format(num))
-
+    if my_list:
+        # Cycle through my_list
+        for value in my_list:
+            # Print each value per line
+            print("{0}".format(value))
