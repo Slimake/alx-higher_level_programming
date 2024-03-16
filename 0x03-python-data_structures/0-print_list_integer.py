@@ -15,4 +15,4 @@ def print_list_integer(my_list=[]):
         # Cycle through my_list
         for num in my_list:
             # Print each value per line
-            print("{:d}".format(num))
+            print("{0:d}".format(num))
