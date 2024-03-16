@@ -10,7 +10,7 @@ def print_list_integer(my_list=[]):
     Returns:
         None
     """
-    if my_list:
+    if len(my_list):
         # Cycle through my_list
         for value in my_list:
             # Print each value per line
