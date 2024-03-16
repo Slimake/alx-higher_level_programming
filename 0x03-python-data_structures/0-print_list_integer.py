@@ -11,7 +11,7 @@ def print_list_integer(my_list=[]):
         None
     """
 
-    if len(my_list):
+    if my_list:
         # Cycle through my_list
         for num in my_list:
             # Print each value per line
