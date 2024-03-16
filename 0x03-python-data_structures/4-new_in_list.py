@@ -7,10 +7,10 @@ def new_in_list(my_list, idx, element):
     if my_list_copy:
         # Return my_list_copy if idx is negative
         if idx < 0:
-            return idx
+            return my_list_copy
         # Return my_list_copy if idx is out of range
         if idx > len(my_list_copy) - 1:
-            return idx
+            return my_list_copy
         else:
             # Change element in my_list_copy at idx
             my_list_copy[idx] = element
