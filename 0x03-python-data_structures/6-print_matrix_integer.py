@@ -10,11 +10,11 @@ def print_matrix_integer(matrix=[[]]):
     # Check if matrix is empty
     if matrix:
         # Cycle through the row of matrix list
-        for lst in matrix:
+        for row in matrix:
             # Cycle through the column of each inner list of matrix list
-            for index, num in enumerate(lst):
+            for num in row:
                 # print each element
-                if not (index == len(lst) - 1):
+                if not num == row[len(row) - 1]:
                     print("{:d}".format(num), end=" ")
                 else:
                     print("{:d}".format(num), end="")
