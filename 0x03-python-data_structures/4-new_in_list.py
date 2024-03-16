@@ -1,18 +1,17 @@
 #!/usr/bin/python3
 def new_in_list(my_list, idx, element):
-    # Check if my_list is empty
-    if my_list:
-        # Return my_list if idx is negative
+    # Make a copy of my_list
+    my_list_copy = my_list[:]
+
+    # Check if my_list_copy is empty
+    if my_list_copy:
+        # Return my_list_copy if idx is negative
         if idx < 0:
             return idx
-        # Return my_list if idx is out of range
-        if idx > len(my_list) - 1:
+        # Return my_list_copy if idx is out of range
+        if idx > len(my_list_copy) - 1:
             return idx
         else:
-            my_list_copy = my_list.copy()
-            # Cycle through my_list
-            for i in range(len(my_list_copy)):
-                # If idx matches i
-                if i == idx:
-                    my_list_copy[i] = element
+            # Change element in my_list_copy at idx
+            my_list_copy[idx] = element
             return my_list_copy
