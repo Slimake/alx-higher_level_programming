@@ -7,7 +7,10 @@
  */
 int check_cycle(listint_t *list)
 {
-    listint_t *current;
+    listint_t *current = NULL;
+
+    if (list == NULL)
+        return (0);
     
     current = list;
 
