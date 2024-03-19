@@ -21,6 +21,7 @@ int check_cycle(listint_t *list)
         if (current == NULL)
             return (0);
         if (current == list)
-            return (1);
+            break;
     }
+    return (1);
 }
