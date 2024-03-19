@@ -20,7 +20,7 @@ int check_cycle(listint_t *list)
 
         if (current == NULL)
             return (0);
-        if (current == list)
+        else if (current == list)
             break;
     }
     return (1);
