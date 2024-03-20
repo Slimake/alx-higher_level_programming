@@ -10,16 +10,13 @@ def search_replace(my_list, search, replace):
         Returns:
             The return value. new list
         """
-    # Check if the list is not empty
-    if my_list:
+    # Make new copy of my_list
+    new_list = my_list[:]
 
-        # Make new copy of my_list
-        new_list = my_list[:]
+    # Cycle through my_list
+    for i in range(len(new_list)):
+        # If element at index is same as search, replace
+        if new_list[i] == search:
+            new_list[i] = replace
 
-        # Cycle through my_list
-        for i in range(len(new_list)):
-            # If element at index is same as search, replace
-            if new_list[i] == search:
-                new_list[i] = replace
-
-        return new_list
+    return new_list
