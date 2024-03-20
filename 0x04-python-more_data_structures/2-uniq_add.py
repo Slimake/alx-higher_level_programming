@@ -13,3 +13,5 @@ def uniq_add(my_list=[]):
         # Use the sum function, pass in set,
         # which takes my_list as argument
         return sum(set(my_list))
+
+    return 0
