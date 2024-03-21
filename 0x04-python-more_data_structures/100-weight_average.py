@@ -12,7 +12,6 @@ def weight_average(my_list=[]):
             last_item += row[-1]
         # Divide the stored sum and the last item
         # of each tuple in my_list and return
-        print(tuple_sum, last_item)
         return tuple_sum / last_item
     else:
         return 0
