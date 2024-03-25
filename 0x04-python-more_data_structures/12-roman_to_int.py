@@ -9,7 +9,7 @@ def roman_to_int(roman_string):
     for i, j in zip(roman_string, roman_string[1:]):
         if roman_num[i] >= roman_num[j]:
             sum += roman_num[i]
-    elif roman_num[i] < roman_num[j]:
-        sum -= roman_num[i]
+        elif roman_num[i] < roman_num[j]:
+            sum -= roman_num[i]
     sum += roman_num[roman_string[-1]]
     return sum
