@@ -5,6 +5,7 @@ Module 0-add_integer contains a function that adds two integers
 Returns the addition of the two integers
 """
 
+
 def add_integer(a, b=98):
     """
         Returns the addition of two integers
