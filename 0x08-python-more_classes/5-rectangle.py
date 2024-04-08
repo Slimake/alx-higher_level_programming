@@ -71,7 +71,7 @@ class Rectangle:
 
     def __repr__(self):
         """Official string representation of rectangle instance"""
-        return "Rectangle({}, {})".format(self.width, self.height)
+        return "{}({}, {})".format(self.__class__.__name__, self.width, self.height)
 
     def __del__(self):
         """Print Bye rectangle when an object is deleted"""
