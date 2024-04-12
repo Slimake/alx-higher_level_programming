@@ -22,7 +22,7 @@ We use it:
         ...
     TypeError: last_name must be a string
     >>> say_my_name("Sam")
-    My name is Sam
+    My name is Sam 
     >>> say_my_name("Sam", "John")
     My name is Sam John
     >>> say_my_name(str(4), "John")
