@@ -1,0 +1,26 @@
+The ``1-my_list`` module
+============================
+
+Using ``myList``
+---------------------
+
+Import ``MyList`` from the ``1-my_list`` module
+
+    >>> MyList = __import__('1-my_list').MyList
+
+We use it:
+    >>> mylist = MyList()
+    >>> mylist
+    []
+    >>> mylist.append(1)
+    >>> mylist.append(4)
+    >>> mylist.append(3)
+    >>> mylist.append(2)
+    >>> mylist.append(-3)
+    >>> mylist.append(-1)
+    >>> print(mylist)
+    [1, 4, 3, 2, -3, -1]
+    >>> mylist.print_sorted()
+    [-3, -1, 1, 2, 3, 4]
+    >>> print(mylist)
+    [1, 4, 3, 2, -3, -1]
