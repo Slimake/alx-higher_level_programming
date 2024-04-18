@@ -2,6 +2,7 @@
 """Module 0-read_file.py
 """
 
+
 def read_file(filename=""):
     """Reads a text file and print it to stdout
     """
