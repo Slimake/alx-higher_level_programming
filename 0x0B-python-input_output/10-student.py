@@ -12,13 +12,11 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        if not attrs:
+        if attrs is None:
             return self.__dict__
         else:
             new_dict = {}
             for name in attrs:
-                try:
+                if self.__dict__.__contains__(name):
                     new_dict[name] = self.__dict__[name]
-                except KeyError:
-                    continue
             return new_dict
