@@ -21,7 +21,7 @@ class TestRectangleClass(unittest.TestCase):
     def test_width_assert_raises_type(self):
         with self.assertRaises(TypeError):
             Rectangle("10", 5, 0, 0, 4)
-        
+
     def test_width_assert_raises_value(self):
         with self.assertRaises(ValueError):
             Rectangle(0, 5)
@@ -73,6 +73,13 @@ class TestRectangleClass(unittest.TestCase):
     def test_y_assert_raises_value(self):
         with self.assertRaises(ValueError):
             Rectangle(10, 5, 0, -1)
+
+    def test_area_assert_equal(self):
+        self.assertEqual(56, Rectangle(8, 7).area())
+
+    def test_area_assert_True(self):
+        self.assertTrue(6, Rectangle(3, 2).area())
+
 
 if __name__ == "__main__":
     unittest.main()
