@@ -35,6 +35,18 @@ class Rectangle(Base):
             print(" " * self.x, end="")
             print("#" * self.width)
 
+    def update(self, *args):
+        """ Assigns an argument to each attribute
+        """
+        try:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
+        except IndexError:
+            pass
+
     @property
     def width(self):
         """ Getter for width
