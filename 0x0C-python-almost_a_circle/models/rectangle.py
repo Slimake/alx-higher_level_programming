@@ -35,17 +35,24 @@ class Rectangle(Base):
             print(" " * self.x, end="")
             print("#" * self.width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ Assigns an argument to each attribute
         """
-        try:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-            self.x = args[3]
-            self.y = args[4]
-        except IndexError:
-            pass
+        if args:
+            for index, arg in enumerate(args):
+                if index == 0:
+                    self.id = arg
+                elif index == 1:
+                    self.width = arg
+                elif index == 2:
+                    self.height = arg
+                elif index == 3:
+                    self.x = arg
+                elif index == 4:
+                    self.y = arg
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     @property
     def width(self):
