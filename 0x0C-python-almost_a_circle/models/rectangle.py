@@ -53,6 +53,11 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+    
+    def to_dictionary(self):
+        """ Returns the dictionary representation of class Rectangle:
+        """
+        return self.__dict__
 
     @property
     def width(self):
