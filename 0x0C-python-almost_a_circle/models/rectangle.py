@@ -96,3 +96,10 @@ class Rectangle(Base):
         elif value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def __str__(self):
+        """ String representation of Rectangle class
+        """
+        return ("[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+                    type(self).__name__, self.id, self.x,
+                    self.y, self.width, self.height))
