@@ -53,9 +53,9 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-    
+
     def to_dictionary(self):
-        """ Returns the dictionary representation of class Rectangle:
+        """ Returns the dictionary representation of class Rectangle
         """
         obj = {}
         obj['id'] = self.id
