@@ -17,6 +17,23 @@ class Square(Rectangle):
         """
         super().__init__(size, size, x, y, id)
 
+    def update(self, *args, **kwargs):
+        """ Update Rectangle instance attributes
+        """
+        if args:
+            for index, arg in enumerate(args):
+                if index == 0:
+                    self.id = arg
+                elif index == 1:
+                    self.size = arg
+                elif index == 2:
+                    self.x = arg
+                elif index == 3:
+                    self.y = arg
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
     @property
     def size(self):
         """ Getter for size
