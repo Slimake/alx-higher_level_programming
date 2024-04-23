@@ -28,9 +28,11 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-        """ Prints character # to the stdout
+        """ Prints character # to the stdout using x and y coordinate
         """
+        print("\n" * self.y, end="")
         for line in range(self.height):
+            print(" " * self.x, end="")
             print("#" * self.width)
 
     @property
