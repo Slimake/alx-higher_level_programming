@@ -27,6 +27,12 @@ class Rectangle(Base):
         """
         return self.width * self.height
 
+    def display(self):
+        """ Prints character # to the stdout
+        """
+        for line in range(self.height):
+            print("#" * self.width)
+
     @property
     def width(self):
         """ Getter for width
