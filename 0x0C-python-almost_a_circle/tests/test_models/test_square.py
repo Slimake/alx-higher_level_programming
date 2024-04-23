@@ -1,88 +1,87 @@
 #!/usr/bin/python3
-""" test_rectangle module
+""" test_square module
 """
 import unittest
-from models.rectangle import Rectangle
+from models.square import Square
 
 
-class TestRectangleClass(unittest.TestCase):
-    """ Test for Rectangle class
+class TestSquareClass(unittest.TestCase):
+    """ Test for Square class
     """
     def test_id_assert_equal(self):
-        self.assertTrue(1, Rectangle(10, 5, 0, 0).id)
-        self.assertTrue(4, Rectangle(10, 5, 0, 0, 4).id)
+        self.assertTrue(1, Square(5).id)
+        self.assertTrue(2, Square(2, 0, 0, 2).id)
 
     def test_width_assert_equal(self):
-        self.assertEqual(10, Rectangle(10, 5).width)
+        self.assertEqual(5, Square(5).width)
 
     def test_width_assert_true(self):
-        self.assertTrue(10, Rectangle(10, 5).width)
+        self.assertTrue(10, Square(5, 10).width)
 
     def test_width_assert_raises_type(self):
         with self.assertRaises(TypeError):
-            Rectangle("10", 5, 0, 0, 4)
+            Square("5", 0, 0, 4)
 
     def test_width_assert_raises_value(self):
         with self.assertRaises(ValueError):
-            Rectangle(0, 5)
+            Square(0, 5)
 
     def test_height_assert_equal(self):
-        self.assertEqual(5, Rectangle(10, 5).height)
+        self.assertEqual(10, Square(10).height)
 
     def test_height_assert_true(self):
-        self.assertTrue(5, Rectangle(10, 5).height)
+        self.assertTrue(10, Square(10).height)
 
     def test_height_assert_raises_type(self):
         with self.assertRaises(TypeError):
-            Rectangle(10, "5", 0, 0, 4)
+            Square("10", 0, 0, 4)
 
     def test_height_assert_raises_value(self):
         with self.assertRaises(ValueError):
-            Rectangle(10, 0)
+            Square(0)
 
     def test_x_assert_equal(self):
-        self.assertEqual(0, Rectangle(10, 5).x)
+        self.assertEqual(0, Square(5).x)
 
     def test_x_assert_true(self):
-        self.assertTrue(1, Rectangle(10, 5, 1, 1).x)
+        self.assertTrue(1, Square(5, 1, 1).x)
 
     def test_x_assert_false(self):
-        self.assertFalse(0, Rectangle(10, 5).x)
+        self.assertFalse(0, Square(5).x)
 
     def test_x_assert_raises_type(self):
         with self.assertRaises(TypeError):
-            Rectangle(10, 5, "1", 0, 4).x
+            Square(5, "1", 0, 4).x
 
     def test_x_assert_raises_value(self):
         with self.assertRaises(ValueError):
-            Rectangle(10, 5, -1)
+            Square(5, -3)
 
     def test_y_assert_equal(self):
-        self.assertEqual(0, Rectangle(10, 5).y)
+        self.assertEqual(0, Square(5).y)
 
     def test_y_assert_true(self):
-        self.assertTrue(1, Rectangle(10, 5, 1, 1).y)
+        self.assertTrue(1, Square(5, 1, 1).y)
 
     def test_y_assert_false(self):
-        self.assertFalse(0, Rectangle(10, 5).y)
+        self.assertFalse(0, Square(5).y)
 
     def test_y_assert_raises_type(self):
         with self.assertRaises(TypeError):
-            Rectangle(10, 5, 1, "1", 4).y
+            Square(5, 1, "1", 4).y
 
     def test_y_assert_raises_value(self):
         with self.assertRaises(ValueError):
-            Rectangle(10, 5, 0, -1)
+            Square(5, 0, -1)
 
     def test_area_assert_equal(self):
-        self.assertEqual(56, Rectangle(8, 7).area())
+        self.assertEqual(9, Square(3).area())
 
     def test_area_assert_True(self):
-        self.assertTrue(6, Rectangle(3, 2).area())
+        self.assertTrue(16, Square(4).area())
 
     def test___str___assert_True(self):
-        self.assertTrue(("[Rectangle] (1) 10/10 - 10/10",
-                        Rectangle(10, 10, 10, 10)))
+        self.assertTrue("[Square] (1) 4/4 - 2/2", Square(2, 4, 4))
 
 
 if __name__ == "__main__":
