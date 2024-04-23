@@ -80,6 +80,9 @@ class TestRectangleClass(unittest.TestCase):
     def test_area_assert_True(self):
         self.assertTrue(6, Rectangle(3, 2).area())
 
+    def test_display_assert_True(self):
+        self.assertTrue("##", Rectangle(2, 1).display())
+
 
 if __name__ == "__main__":
     unittest.main()
