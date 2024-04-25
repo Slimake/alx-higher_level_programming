@@ -70,9 +70,8 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(56, Rectangle(8, 7).area())
 
     def test___str___assert_True(self):
-        self.assertEqual(
-                ("[Rectangle] (1) 0/0 - 3/4",
-                 Rectangle(3, 4, 0, 0, 1).__str__()))
+        self.assertEqual("[Rectangle] (1) 0/0 - 3/4",
+                 Rectangle(3, 4, 0, 0, 1).__str__())
 
     def test_to_dictionary_assert_equal(self):
         self.s.update(width=1, x=1, height=2, y=3, id=89)
