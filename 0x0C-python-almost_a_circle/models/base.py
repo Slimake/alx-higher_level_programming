@@ -2,6 +2,7 @@
 """ base Module
 """
 import json
+import csv
 
 
 class Base:
@@ -81,3 +82,48 @@ class Base:
                 return list_output
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Writes the CSV representation of list_objs to a file
+        """
+        instances = []
+        for obj in list_objs:
+            instances.append(obj.to_dictionary())
+        keys = instances[0].keys()
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", newline="") as csvfile:
+            writer = csv.DictWriter(csvfile, keys)
+            writer.writeheader()
+            writer.writerows(instances)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ Return the list of instances
+        """
+        list_objs = []
+        filename = cls.__name__ + ".csv"
+
+        try:
+            with open(filename, "r", newline="") as csvfile:
+                reader = csv.DictReader(csvfile)
+                for row in reader:
+                    if cls.__name__ == "Rectangle":
+                        dic = {
+                            'id': int(row['id']),
+                            'width': int(row['width']),
+                            'height': int(row['height']),
+                            'x': int(row['x']),
+                            'y': int(row['y'])
+                        }
+                    if cls.__name__ == "Square":
+                        dic = {
+                            'id': int(row['id']),
+                            'size': int(row['size']),
+                            'x': int(row['x']),
+                            'y': int(row['y'])
+                        }
+                    list_objs.append(cls.create(**dic))
+            return list_objs
+        except FileNotFoundError:
+            return list_objs
