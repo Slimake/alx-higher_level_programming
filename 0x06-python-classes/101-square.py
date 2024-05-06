@@ -54,6 +54,9 @@ class Square:
 
     def __str__(self):
         """ Print space and # character """
-        return (("" * self.__position[1]) +
-                ("\n".join([" " * self.__position[0] + '#' * self.__size
-                            for row in range(self.__size)])))
+        if self.__size == 0:
+            return ""
+        else:
+            return (("\n" * self.__position[1]) +
+                    ("\n".join([" " * self.__position[0] + '#' * self.__size
+                                for row in range(self.__size)])))
