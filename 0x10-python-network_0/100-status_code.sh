@@ -1,3 +1,3 @@
 #!/bin/bash
 # A bash that displays only the status code of the response
-curl -s -o /dev/null -w "%{http_code}\n" 0.0.0.0:5000
+curl -s -o /dev/null -w "%{http_code}\n" "$1"
