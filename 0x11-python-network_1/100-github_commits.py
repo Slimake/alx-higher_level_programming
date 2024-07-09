@@ -12,7 +12,6 @@ if __name__ == "__main__":
         argv[2], argv[1])
     r = requests.get(url)
     list_commits = r.json()
-    print(list_commits)
     for commit in list_commits[0:10]:
         print(commit.get('sha'), end=': ')
         print(commit.get('commit').get('author').get('name'))
