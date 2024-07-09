@@ -6,6 +6,7 @@ Defines class City
 from sqlalchemy import Column, Integer, String, ForeignKey
 from relationship_state import Base, State
 
+
 class City(Base):
     """
     Class City; instance of Base
