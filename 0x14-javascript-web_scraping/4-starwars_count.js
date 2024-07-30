@@ -10,13 +10,18 @@ request(url, (error, response, body) => {
     return;
   }
 
-  const obj = JSON.parse(body);
-  let total = 0;
+  if (response.statusCode === 200) {
+    const results = JSON.parse(body).results;
+    let total = 0;
 
-  for (const result of obj.results) {
-    for (const character of result.characters) {
-      if (character.includes('18')) total += 1;
+    for (const result of results) {
+      for (const character of result.characters) {
+        if (character.includes('18')) total += 1;
+      }
     }
+
+    console.log(total);
+  } else {
+    console.log('Error Code:', response.statusCode);
   }
-  console.log(total);
 });
