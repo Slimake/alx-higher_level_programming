@@ -3,9 +3,8 @@
 const request = require('request');
 
 const url = process.argv[2];
-const todosURL = `${url}?completed=true`;
 
-request(todosURL, (error, response, body) => {
+request(url, (error, response, body) => {
   if (error) throw error;
 
   if (response.statusCode === 200) {
@@ -14,10 +13,12 @@ request(todosURL, (error, response, body) => {
     const dic = {};
 
     for (const i in todos) {
-      if (dic[todos[i].userId] === undefined) {
-        dic[todos[i].userId] = 1;
-      } else {
-        dic[todos[i].userId]++;
+      if (todos[i].completed === true) {
+        if (dic[todos[i].userId] === undefined) {
+          dic[todos[i].userId] = 1;
+        } else {
+          dic[todos[i].userId]++;
+        }
       }
     }
 
